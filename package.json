@@ -1,0 +1,28 @@
+{
+  "name": "api-tarefas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/PauloSchneider/api-tarefas.git",
+  "author": "PauloSchneider <prschneider98@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsnd --ignore-watch node_modules --respawn --transpile-only ./src/server.ts",
+    "migration:create": "cd ./src/database/migrations && typeorm-ts-node-commonjs migration:create",
+    "migration:run": "typeorm-ts-node-commonjs migration:run -d ./src/database/data-source.ts"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.14.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "pg": "^8.15.5",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.22"
+  }
+}
